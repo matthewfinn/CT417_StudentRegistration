@@ -1,23 +1,40 @@
+/**
+ *
+ * COPYRIGHT (C) 2016 Matthew Finn. All Rights Reserved.
+ *
+ * */
+
 package ie.nuigalway.mfinn.StudentRegistration;
 
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
 import org.junit.Test;
 
-import junit.framework.TestCase;
+public class StudentRegistrationTest {
 
-public class StudentRegistrationTest extends TestCase {
+	static String expectedUsername;
+	static String actualUsername;
 
-	String testUsername, testUsername2;
-
-	@Override
-	public void setUp() {
+	/**
+	 * Initialises student object with parameters and the expected username to
+	 * test by concatenating 2 strings
+	 */
+	@Before
+	public void onSetUp() {
 		final Student testStudent = new Student("A", "B", 21, "AVC123");
-		testUsername = testStudent.setUsername();
-		testUsername2 = testStudent.getName() + testStudent.getAge();
+		actualUsername = testStudent.getUsername();
+		expectedUsername = testStudent.getName() + testStudent.getAge();
 	}
 
+	/**
+	 * Asserts expected vs. actual
+	 *
+	 * @return true if they're equal, false if they're not
+	 */
 	@Test
-	public void testUsername(String testName) {
-		assertEquals(testUsername, testUsername2);
+	public void testUsername() {
+		assertTrue(expectedUsername.equals(actualUsername));
 	}
 
 }

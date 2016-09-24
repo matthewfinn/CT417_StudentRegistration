@@ -1,3 +1,9 @@
+/**
+ *
+ * COPYRIGHT (C) 2016 Matthew Finn. All Rights Reserved.
+ *
+ * */
+
 package ie.nuigalway.mfinn.StudentRegistration;
 
 import java.util.ArrayList;
@@ -21,6 +27,12 @@ public class Student {
 	public String setUsername() {
 
 		username = this.getName() + this.getAge();
+		return username;
+	}
+
+	public String getUsername() {
+
+		// username = this.getName() + this.getAge();
 		return username;
 	}
 

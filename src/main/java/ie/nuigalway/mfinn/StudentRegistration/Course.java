@@ -1,3 +1,9 @@
+/**
+ *
+ * COPYRIGHT (C) 2016 Matthew Finn. All Rights Reserved.
+ *
+ * */
+
 package ie.nuigalway.mfinn.StudentRegistration;
 
 import java.util.ArrayList;
