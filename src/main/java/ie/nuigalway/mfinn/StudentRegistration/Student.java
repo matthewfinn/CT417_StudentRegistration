@@ -1,35 +1,43 @@
 package ie.nuigalway.mfinn.StudentRegistration;
 
+import java.util.ArrayList;
+
 public class Student {
 	private final String name;
 	private final String DOB;
 	private final int age;
-	private String username;
 	private final String ID;
+	private String username;
+	private ArrayList<String> modules;
 
-	Student(String nm, String dob, int a, String id) {
-
-		name = nm;
-		DOB = dob;
-		age = a;
-		ID = id;
-
+	public Student(String name, String dOB, int age, String iD) {
+		this.name = name;
+		this.DOB = dOB;
+		this.age = age;
+		this.ID = iD;
+		this.username = setUsername();
 	}
 
-	String getName() {
-		return this.name;
-	}
+	public String setUsername() {
 
-	String getDOB() {
-		return this.DOB;
-	}
-
-	int getAge() {
-		return this.age;
-	}
-
-	String getUsername() {
-		this.username = this.age + this.ID;
+		username = this.getName() + this.getAge();
 		return username;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getDOB() {
+		return DOB;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
 }

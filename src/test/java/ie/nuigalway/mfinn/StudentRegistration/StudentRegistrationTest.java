@@ -1,18 +1,23 @@
 package ie.nuigalway.mfinn.StudentRegistration;
 
+import org.junit.Test;
+
 import junit.framework.TestCase;
 
-/**
- * Unit test for simple App.
- */
 public class StudentRegistrationTest extends TestCase {
 
-	public void usernameTest(String testName) {
+	String testUsername, testUsername2;
 
+	@Override
+	public void setUp() {
 		final Student testStudent = new Student("A", "B", 21, "AVC123");
-		final String testUsername = testStudent.getUsername();
+		testUsername = testStudent.setUsername();
+		testUsername2 = testStudent.getName() + testStudent.getAge();
+	}
 
-		System.out.println(testStudent.getUsername());
+	@Test
+	public void testUsername(String testName) {
+		assertEquals(testUsername, testUsername2);
 	}
 
 }
