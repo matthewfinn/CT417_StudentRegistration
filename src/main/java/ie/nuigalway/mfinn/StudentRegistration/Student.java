@@ -16,6 +16,18 @@ public class Student {
 
 	}
 
+	String getName() {
+		return this.name;
+	}
+
+	String getDOB() {
+		return this.DOB;
+	}
+
+	int getAge() {
+		return this.age;
+	}
+
 	String getUsername() {
 		this.username = this.age + this.ID;
 		return username;
