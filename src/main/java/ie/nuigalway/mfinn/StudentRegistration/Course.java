@@ -12,21 +12,31 @@ import org.joda.time.DateTime;
 
 public class Course {
 
-	private final String name;
-	private final ArrayList<Module> modules;
-	private final DateTime startDate;
-	private final DateTime endDate;
+	private String name;
+	private ArrayList<Module> modules;
+	private DateTime startDate;
+	private DateTime endDate;
 
-	public Course(String name, ArrayList<Module> module, DateTime startDate, DateTime endDate) {
+	/**
+	 *
+	 * @param name,
+	 *            String object that is the name of the module
+	 *
+	 * @param module,
+	 *            Arraylist that holds Module objects. These are the modules
+	 *            that are part of the course
+	 *
+	 * @param startDate,
+	 *            DateTime object that stores the starting date of the module
+	 *
+	 * @param endDate,
+	 *            DateTime object that stores the end date of the module
+	 */
+	public Course(String name, ArrayList<Module> mdles, DateTime startDate, DateTime endDate) {
 		this.name = name;
-		this.modules = module;
+		this.modules = mdles;
 		this.startDate = startDate;
 		this.endDate = endDate;
-	}
-
-	public ArrayList<Module> addModule(Module module) {
-		modules.add(module);
-		return modules;
 	}
 
 	public String getName() {
@@ -45,4 +55,23 @@ public class Course {
 		return endDate;
 	}
 
+	public void setName(String nm) {
+		this.name = nm;
+	}
+
+	public void setStart(DateTime sd) {
+		this.startDate = sd;
+	}
+
+	public void setEnd(DateTime ed) {
+		this.endDate = ed;
+	}
+
+	public void setModules(ArrayList<Module> mdles) {
+		this.modules = mdles;
+	}
+
+	public void addModule(Module module) {
+		modules.add(module);
+	}
 }

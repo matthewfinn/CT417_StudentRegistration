@@ -15,7 +15,6 @@ public class Module {
 	private ArrayList<Student> students;
 
 	public Module(String name, String id, ArrayList<Student> students) {
-		super();
 		this.name = name;
 		this.id = id;
 		this.students = students;
@@ -43,6 +42,10 @@ public class Module {
 
 	public void setStudents(ArrayList<Student> students) {
 		this.students = students;
+	}
+
+	public void addStudent(Student s) {
+		students.add(s);
 	}
 
 }

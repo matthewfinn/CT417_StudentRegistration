@@ -9,35 +9,36 @@ package ie.nuigalway.mfinn.StudentRegistration;
 import java.util.ArrayList;
 
 public class Student {
-	private final String name;
-	private final String DOB;
-	private final int age;
-	private final String ID;
+	private String firstName;
+	private String surname;
+	private String DOB;
+	private int age;
+	private String ID;
 	private String username;
-	private ArrayList<String> modules;
+	private Course course;
+	private ArrayList<Module> modules;
 
-	public Student(String name, String dOB, int age, String iD) {
-		this.name = name;
+	public Student(String fn, String sn, String dOB, int age, String iD, Course c) {
+		this.firstName = fn;
+		this.surname = sn;
 		this.DOB = dOB;
 		this.age = age;
 		this.ID = iD;
-		this.username = setUsername();
-	}
-
-	public String setUsername() {
-
-		username = this.getName() + this.getAge();
-		return username;
+		this.course = c;
+		this.username = getUsername();
 	}
 
 	public String getUsername() {
-
-		// username = this.getName() + this.getAge();
+		setUsername();
 		return username;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getSurname() {
+		return surname;
 	}
 
 	public String getDOB() {
@@ -52,4 +53,39 @@ public class Student {
 		return ID;
 	}
 
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setFirstName(String fn) {
+		this.firstName = fn;
+	}
+
+	public void setSurname(String sn) {
+		this.surname = sn;
+	}
+
+	public void setDOB(String dob) {
+		this.DOB = dob;
+	}
+
+	public void setUsername() {
+		username = this.getFirstName() + this.getSurname() + this.getAge();
+	}
+
+	public void setAge(int a) {
+		this.age = a;
+	}
+
+	public void setID(String id) {
+		this.ID = id;
+	}
+
+	public void setCourse(Course c) {
+		this.course = c;
+	}
+
+	public void addModule(Module mod) {
+		modules.add(mod);
+	}
 }

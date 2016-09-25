@@ -22,9 +22,15 @@ public class StudentRegistrationTest {
 	 */
 	@Before
 	public void onSetUp() {
-		final Student testStudent = new Student("A", "B", 21, "AVC123");
+		// course var initialsed as null as it isn't needed in this test.
+		final Student testStudent = new Student("Matthew", "Finn ", "22/09/1994", 22, "13480362", null);
+
+		// Should be "MatthewFinn22"
 		actualUsername = testStudent.getUsername();
-		expectedUsername = testStudent.getName() + testStudent.getAge();
+
+		// Is "MatthewFinn22"
+		expectedUsername = testStudent.getFirstName() + testStudent.getSurname() + testStudent.getAge();
+
 	}
 
 	/**
