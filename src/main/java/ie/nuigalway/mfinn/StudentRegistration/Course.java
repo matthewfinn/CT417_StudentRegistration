@@ -17,21 +17,6 @@ public class Course {
 	private DateTime startDate;
 	private DateTime endDate;
 
-	/**
-	 *
-	 * @param name,
-	 *            String object that is the name of the module
-	 *
-	 * @param module,
-	 *            Arraylist that holds Module objects. These are the modules
-	 *            that are part of the course
-	 *
-	 * @param startDate,
-	 *            DateTime object that stores the starting date of the module
-	 *
-	 * @param endDate,
-	 *            DateTime object that stores the end date of the module
-	 */
 	public Course(String name, ArrayList<Module> mdles, DateTime startDate, DateTime endDate) {
 		this.name = name;
 		this.modules = mdles;
