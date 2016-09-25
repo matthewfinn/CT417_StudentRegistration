@@ -14,10 +14,9 @@ public class Module {
 	private String id;
 	private ArrayList<Student> students;
 
-	public Module(String name, String id, ArrayList<Student> students) {
+	public Module(String name, String id) {
 		this.name = name;
 		this.id = id;
-		this.students = students;
 	}
 
 	public String getName() {
@@ -46,6 +45,12 @@ public class Module {
 
 	public void addStudent(Student s) {
 		students.add(s);
+	}
+
+	@Override
+	public String toString() {
+
+		return this.id + " " + this.name;
 	}
 
 }

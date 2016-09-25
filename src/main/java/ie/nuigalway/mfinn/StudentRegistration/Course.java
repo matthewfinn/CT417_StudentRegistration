@@ -16,10 +16,10 @@ public class Course {
 	private ArrayList<Module> modules;
 	private DateTime startDate;
 	private DateTime endDate;
+	private ArrayList<Student> students;
 
-	public Course(String name, ArrayList<Module> mdles, DateTime startDate, DateTime endDate) {
+	public Course(String name, DateTime startDate, DateTime endDate) {
 		this.name = name;
-		this.modules = mdles;
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
@@ -30,6 +30,10 @@ public class Course {
 
 	public ArrayList<Module> getModules() {
 		return modules;
+	}
+
+	public ArrayList<Student> getStudents() {
+		return students;
 	}
 
 	public DateTime getStartDate() {
@@ -58,5 +62,9 @@ public class Course {
 
 	public void addModule(Module module) {
 		modules.add(module);
+	}
+
+	public void addStudent(Student stu) {
+		students.add(stu);
 	}
 }

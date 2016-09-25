@@ -88,4 +88,10 @@ public class Student {
 	public void addModule(Module mod) {
 		modules.add(mod);
 	}
+
+	@Override
+	public String toString() {
+		return this.firstName + " " + this.surname;
+
+	}
 }
