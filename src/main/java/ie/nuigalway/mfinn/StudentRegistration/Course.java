@@ -17,12 +17,15 @@ public class Course {
 	private DateTime startDate;
 	private DateTime endDate;
 	private int length;
+	private ArrayList <Student> students;
 
 	public Course(String name, DateTime startDate, DateTime endDate, int len) {
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.length = len;
+		this.modules = new ArrayList<Module>();
+		this.students = new ArrayList<Student>();
 	}
 
 	// Getter Methods
@@ -32,6 +35,10 @@ public class Course {
 
 	public ArrayList<Module> getModules() {
 		return modules;
+	}
+
+	public ArrayList<Student> getStudents() {
+		return students;
 	}
 
 
@@ -70,8 +77,26 @@ public class Course {
 	}
 
 	// Method to add a module to the course
-	public void addModule(Module module) {
-		modules.add(module);
+	public void addModule(Module m) {
+
+		if(!modules.contains(m)){
+			modules.add(m);
+			//System.out.println(m.getName() + " added to " + this.getName());
+		}else{
+
+			//System.out.println(m.getName() + " already added to " + this.getName());
+		}
+
+		//Adds students in the module to the courses list of students
+		ArrayList<Student> tempStudents = new ArrayList<Student>();
+		tempStudents = m.getStudents();
+
+		for (Student temp : tempStudents) {
+			if(!students.contains(temp)){ //checks if adding duplicate students
+				students.add(temp);
+			}
+		}
+
 	}
 
 }

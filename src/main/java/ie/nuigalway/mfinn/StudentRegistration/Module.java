@@ -18,6 +18,8 @@ public class Module {
 	public Module(String name, String id) {
 		this.name = name;
 		this.id = id;
+		this.students = new ArrayList<Student>();
+		this.courses = new ArrayList<Course>();
 
 	}
 
@@ -56,11 +58,14 @@ public class Module {
 	}
 
 	public void addStudent(Student s) {
-		//if(students.isEmpty() || !students.contains(s))
-		//{
-		students.add(s);
-		//}
-		//else System.out.println("Student already registed for this module");
+		if(!students.contains(s)){
+			students.add(s);
+			s.addModule(this);
+			//System.out.println(s.toString() + " registered for " + this.getName());
+		}else{
+
+			//System.out.println(s.toString() +" already registered for this module");
+		}
 	}
 
 	@Override

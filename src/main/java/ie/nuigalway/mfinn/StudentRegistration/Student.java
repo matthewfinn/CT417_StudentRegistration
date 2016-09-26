@@ -26,6 +26,7 @@ public class Student {
 		this.ID = iD;
 		this.course = c;
 		this.username = getUsername();
+		this.modules = new ArrayList<Module>();
 	}
 
 	// Getter methods
@@ -58,6 +59,10 @@ public class Student {
 		return course;
 	}
 
+	public ArrayList<Module> getModules(){
+		return modules;
+	}
+
 	// Setter methods
 	public void setFirstName(String fn) {
 		this.firstName = fn;
@@ -88,8 +93,15 @@ public class Student {
 	}
 
 	// Method to add a module to list of modules they're taking
-	public void addModule(Module mod) {
-		modules.add(mod);
+	public void addModule(Module m) {
+
+		if(!modules.contains(m)){
+			modules.add(m);
+			//System.out.println(this.toString() + " is now registered for " + m.getName());
+		}else{
+
+			//System.out.println(this.toString() + " is already registered for " + m.getName());
+		}
 	}
 
 	// toString method concatenates their first name & surname
