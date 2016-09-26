@@ -81,22 +81,19 @@ public class Course {
 
 		if(!modules.contains(m)){
 			modules.add(m);
-			//System.out.println(m.getName() + " added to " + this.getName());
-		}else{
 
-			//System.out.println(m.getName() + " already added to " + this.getName());
-		}
+			//Temporary arraylist of student objects obtained from a module object
+			ArrayList<Student> tempStudents = new ArrayList<Student>();
+			tempStudents = m.getStudents();
 
-		//Adds students in the module to the courses list of students
-		ArrayList<Student> tempStudents = new ArrayList<Student>();
-		tempStudents = m.getStudents();
-
-		for (Student temp : tempStudents) {
-			if(!students.contains(temp)){ //checks if adding duplicate students
-				students.add(temp);
+			//adds student to a list so students registered for this course can be obtained
+			for (Student temp : tempStudents) {
+				if(!students.contains(temp)){ //checks if adding duplicate students
+					students.add(temp);
+				}
 			}
+
 		}
+	}}
 
-	}
 
-}
