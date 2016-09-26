@@ -16,14 +16,16 @@ public class Course {
 	private ArrayList<Module> modules;
 	private DateTime startDate;
 	private DateTime endDate;
-	private ArrayList<Student> students;
+	private int length;
 
-	public Course(String name, DateTime startDate, DateTime endDate) {
+	public Course(String name, DateTime startDate, DateTime endDate, int len) {
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
+		this.length = len;
 	}
 
+	// Getter Methods
 	public String getName() {
 		return name;
 	}
@@ -32,8 +34,10 @@ public class Course {
 		return modules;
 	}
 
-	public ArrayList<Student> getStudents() {
-		return students;
+
+	public int getLength() {
+
+		return length;
 	}
 
 	public DateTime getStartDate() {
@@ -44,6 +48,7 @@ public class Course {
 		return endDate;
 	}
 
+	// Setter Methods
 	public void setName(String nm) {
 		this.name = nm;
 	}
@@ -56,15 +61,17 @@ public class Course {
 		this.endDate = ed;
 	}
 
+	public void setLength(int len) {
+		this.length = len;
+	}
+
 	public void setModules(ArrayList<Module> mdles) {
 		this.modules = mdles;
 	}
 
+	// Method to add a module to the course
 	public void addModule(Module module) {
 		modules.add(module);
 	}
 
-	public void addStudent(Student stu) {
-		students.add(stu);
-	}
 }

@@ -28,6 +28,7 @@ public class Student {
 		this.username = getUsername();
 	}
 
+	// Getter methods
 	public String getUsername() {
 		setUsername();
 		return username;
@@ -57,6 +58,7 @@ public class Student {
 		return course;
 	}
 
+	// Setter methods
 	public void setFirstName(String fn) {
 		this.firstName = fn;
 	}
@@ -85,10 +87,12 @@ public class Student {
 		this.course = c;
 	}
 
+	// Method to add a module to list of modules they're taking
 	public void addModule(Module mod) {
 		modules.add(mod);
 	}
 
+	// toString method concatenates their first name & surname
 	@Override
 	public String toString() {
 		return this.firstName + " " + this.surname;
