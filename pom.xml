@@ -40,12 +40,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<distributionManagement>
-
-		<repository>
-			<id>dropbox-mvn-repo</id>
-			<url>file:///Users/matthew/Dropbox/dropbox-mvn-repo</url>
-		</repository>
-
-	</distributionManagement>
 </project>
