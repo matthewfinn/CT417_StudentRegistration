@@ -97,10 +97,9 @@ public class Student {
 
 		if(!modules.contains(m)){
 			modules.add(m);
-			//System.out.println(this.toString() + " is now registered for " + m.getName());
 		}else{
 
-			//System.out.println(this.toString() + " is already registered for " + m.getName());
+			System.out.println(this.toString() + " is already registered for " + m.getName());
 		}
 	}
 

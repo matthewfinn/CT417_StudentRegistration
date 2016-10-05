@@ -61,10 +61,9 @@ public class Module {
 		if(!students.contains(s)){
 			students.add(s);
 			s.addModule(this);
-			//System.out.println(s.toString() + " registered for " + this.getName());
 		}else{
 
-			//System.out.println(s.toString() +" already registered for this module");
+			System.out.println(s.toString() +" already registered for this module");
 		}
 	}
 
